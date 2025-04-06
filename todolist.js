@@ -1,5 +1,51 @@
-// const heading = document.querySelector("h1");
-// heading.style.color = "blue";
+const heading = document.querySelector('.heading');
+heading.style.color = "blue";
+
+const userInput = document.querySelector('input');
+const addButton = document.querySelector('.addButton');
+
+function addItemToList(){
+
+    const itemDetails = userInput.value;
+    userInput.value = "";
+
+    const addLi = document.createElement('li');
+    const addSpan = document.createElement('span');
+    const addDeleteButton = document.createElement('button');
+
+    addSpan.textContent = itemDetails;
+    addDeleteButton.textContent = "delete";
+    
+    addLi.append(addSpan);
+    addLi.append(addDeleteButton);
+    unorderedList.append(addLi);
+
+    // addDeleteButton.addEventListener('click', ()=> {
+    //     unorderedList.removeChild(addLi);
+
+    // });
+    function deleteAction(){
+        unorderedList.removeChild(addLi);
+    }
+    addDeleteButton.addEventListener('click', deleteAction);
+  
+}
+
+addButton.addEventListener('click', () => {
+    addItemToList();
+        
+    });
+
+//let enter do the same as t5he click
+userInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+        addItemToList();
+    }
+});
+ 
+ 
+ //const unorderedList = document.querySelector('ul');
+
 
 // const addButton = document.querySelector("#addItemButton");
 // const toDoList = document.querySelector("#toDoList");
@@ -89,48 +135,6 @@
     
 
 
-const unorderedList = document.querySelector('ul');
-const userInput = document.querySelector('input');
-const addButton = document.querySelector('.addButton');
-
-function addItemToList(){
-
-    const itemDetails = userInput.value;
-    userInput.value = "";
-
-    const addLi = document.createElement('li');
-    const addSpan = document.createElement('span');
-    const addDeleteButton = document.createElement('button');
-
-    addSpan.textContent = itemDetails;
-    addDeleteButton.textContent = "delete";
-    
-    addLi.append(addSpan);
-    addLi.append(addDeleteButton);
-    unorderedList.append(addLi);
-
-    // addDeleteButton.addEventListener('click', ()=> {
-    //     unorderedList.removeChild(addLi);
-
-    // });
-    function deleteAction(){
-        unorderedList.removeChild(addLi);
-    }
-    addDeleteButton.addEventListener('click', deleteAction);
-  
-}
-
-addButton.addEventListener('click', () => {
-    addItemToList();
-        
-    });
-
-//let enter do the same as t5he click
-userInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter'){
-        addItemToList();
-    }
-});
 
 
 
