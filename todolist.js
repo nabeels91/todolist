@@ -1,6 +1,7 @@
-const heading = document.querySelector('.heading');
+const heading = document.querySelector("h1");
 heading.style.color = "blue";
 
+const unorderedList = document.querySelector('ul');
 const userInput = document.querySelector('input');
 const addButton = document.querySelector('.addButton');
 
@@ -42,10 +43,6 @@ userInput.addEventListener('keydown', (e) => {
         addItemToList();
     }
 });
- 
- 
- //const unorderedList = document.querySelector('ul');
-
 
 // const addButton = document.querySelector("#addItemButton");
 // const toDoList = document.querySelector("#toDoList");
@@ -133,6 +130,7 @@ userInput.addEventListener('keydown', (e) => {
 //         }
 //     });
     
+
 
 
 
